@@ -18,4 +18,4 @@ const chanceTheme = () => {
 window.addEventListener("load", () => {
   const $themeBtn = document.querySelector("[data-theme-toggler]");
   $themeBtn.addEventListener("click", chanceTheme);
-})
+});

@@ -10,7 +10,7 @@ export const ripple = function ($rippleElem) {
     const $ripple = document.createElement("div");
     $ripple.classList.add("ripple");
 
-    this.appendChild($ripple)
+    this.appendChild($ripple);
 
     const removeRipple = () => {
       $ripple.animate({

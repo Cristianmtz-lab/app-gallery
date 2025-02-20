@@ -1,5 +1,5 @@
 "use strict";
 
-export const addEventOnElements = function ($elements, eventType, callback) {
+export function addEventOnElements($elements, eventType, callback) {
   $elements.forEach($element => $element.addEventListener(eventType, callback));
 }

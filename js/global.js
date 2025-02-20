@@ -10,7 +10,6 @@ window.addEventListener("scroll", () => {
   $header.classList[window.scrollY > 50 ? "add" : "remove"]("active");
 });
 
-
 // add ripple
 
 const $rippleElems = document.querySelectorAll("[data-ripple]");
