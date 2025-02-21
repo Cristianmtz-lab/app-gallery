@@ -2,6 +2,7 @@
 
 import { addEventOnElements } from "../utils/handleEvent.js";
 import { ripple } from "../utils/ripple.js";
+import { updateurl } from "../utils/updateUrl.js";
 import { segment } from "./segment_btn.js";
 
 // search view toggle in small devies
@@ -44,6 +45,12 @@ $searchBtn.addEventListener("click", function () {
     window.filterObj.query = searchValue;
     updateurl(window.filterObj, window.searchType);
   }
+})
+
+// submit search when press on "Enter" key
+
+$searchField.addEventListener("keydown", e => {
+  if (e.key === "Enter" && $searchField.value.trim()) $searchBtn.click();
 })
 
 // search history 
@@ -91,5 +98,5 @@ for (let i = 0; i < historyLen & i <= 5; i++) {
     $searchBtn.click();
   })
 
-  $searchList.append($listItem)
+  $searchList.appendChild($listItem)
 }

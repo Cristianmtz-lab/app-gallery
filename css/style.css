@@ -601,6 +601,28 @@ component
 
 /*navigation*/
 
+.navigation {
+  --navigation-drawer-width: 320px;
+  background-color: var(--surface);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  max-width: var(--navigation-drawer-width);
+  width: 0;
+  z-index: 6;
+  visibility: hidden;  
+  transition: var(--motion-duration-medium-1) var(--motion-easing-emphasized-accelerate);
+  transition-property: width, visibility;
+  border-radius: var(--radius-large-end);
+}
+
+.navigation.show {
+  width: var(--navigation-drawer-width);
+  visibility: visible;
+  transition: var(--motion-duration-long) var(--motion-easing-emphasized-decelerate);
+}
+
 /*button*/
 
 /*card*/
