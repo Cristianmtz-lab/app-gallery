@@ -22,13 +22,15 @@ export const photoCard = photo => {
   $card.classList.add("card", "grid-item");
   $card.style.backgroundColor = background;
 
+  const favoriteObj = JSON.parse(window.localStorage.getItem("favorite"));
+
   $card.innerHTML = `
-    <figure class="card-banner" style="--width: ${width}; --height: ${height};">
+    <figure class="card-banner " style="--width: ${width}; --height: ${height};">
       <img src="${large}" alt="${alt}" width="${width}" height="${height}" loading="lazy" class="img-cover">
     </figure>
 
     <div class="card-content">
-      <button class="icon-btn small " aria-label="Add to favorite" data-ripple data-favorite-btn>
+      <button class="icon-btn small ${favoriteObj.photos[id] ? "active" : ""}" aria-label="Add to favorite" data-ripple data-favorite-btn>
         <span class="material-symbols-outlined" aria-hidden="true">favorite</span>
         <div class="state-layer"></div>
       </button>
