@@ -1,6 +1,7 @@
 "use strict";
 
 import { ripple } from "../utils/ripple.js";
+import { favorite } from "./favorite.js";
 
 // create photo card
 
@@ -27,7 +28,7 @@ export const photoCard = photo => {
     </figure>
 
     <div class="card-content">
-      <button class="icon-btn small " aria-label="Add to favorite" data-ripple data-toggle-btn>
+      <button class="icon-btn small " aria-label="Add to favorite" data-ripple data-favorite-btn>
         <span class="material-symbols-outlined" aria-hidden="true">favorite</span>
         <div class="state-layer"></div>
       </button>
@@ -48,6 +49,9 @@ export const photoCard = photo => {
   const $rippleElems = [$card, $card.querySelector("[data-ripple]")];
 
   $rippleElems.forEach($rippleElem => ripple($rippleElem));
+
+  const $favoriteBtn = $card.querySelector("[data-favorite-btn]");
+  favorite($favoriteBtn, "photos", id);
 
   return $card;
 }
