@@ -1,7 +1,7 @@
 "use strict";
 
-import API_KEY from '.env';
-import urlEncode from '../utils/urlEncode.js'
+import { API_KEY } from '../env.js';
+import { urlEncode } from '../utils/urlEncode.js';
 
 const headers = new Headers();
 headers.append("Authorization", API_KEY);

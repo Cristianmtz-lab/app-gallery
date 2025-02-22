@@ -10,8 +10,6 @@ import { segment } from "./segment_btn.js";
 const $searchTogglers = document.querySelectorAll("[data-search-toggler]");
 const $searchView = document.querySelector("[data-search-view]");
 
-console.log($searchTogglers)
-
 addEventOnElements($searchTogglers, "click", () => $searchView.classList.toggle("show"));
 
 //search clear 
@@ -26,8 +24,6 @@ $searchClearBtn.addEventListener("click", () => $searchField.value = "");
 const $searchSegment = document.querySelector("[data-segment='search']");
 const $activeSegmentBtn = document.querySelector("[data-segment-btn].selected");
 window.searchType = $activeSegmentBtn.dataset.segmentValue;
-
-console.log(searchType);
 
 segment($searchSegment, segmentValue => {
   window.searchType = segmentValue
