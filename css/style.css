@@ -513,6 +513,21 @@ reused style
   100% {opacity: 1;}
 }
 
+.card-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-content: center;
+  background-color: var(--light-secondary-container);
+  color: var(--light-on-secondary-container);
+  border-radius: var(--radius-small);
+}
+
+.card-badge .material-symbols-outlined {font-size: 1.8rem;}
+
 /*---------------*\
 component
 \*---------------*/
@@ -799,6 +814,8 @@ component
   --state-layer-on: var(--light-inverse-primary);
 }
 
+.card.video {background-color: var(--surface-container-highest);}
+
 /*---------------*\
 top app bar
 \*---------------*/
@@ -855,3 +872,8 @@ main
   margin-top: 64px;
 }
 
+/*curated photos & popular video*/
+
+:where(.featured-photo, .popular-video) .column {
+  
+}
