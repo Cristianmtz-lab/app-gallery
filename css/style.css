@@ -690,6 +690,21 @@ component
   color: var(--on-surface-variant);
 }
 
+.list-item.two-line {
+  justify-content: space-between;
+  padding-inline-end: 12px;
+  height: 72px;
+}
+
+.list-item.two-line .body-large {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+
+.list-item.two-line > .state-layer {pointer-events: all;}
+
 /*navigation*/
 
 .navigation {
@@ -762,7 +777,7 @@ component
 /*button*/
 
 .btn {
-  width: auto;
+  width: max-content;
   padding: 10px;
   text-align: center;
   border-radius: var(--radius-full);
@@ -874,6 +889,45 @@ main
 
 /*curated photos & popular video*/
 
-:where(.featured-photo, .popular-video) .column {
-  
+/* :where(.featured-photo, .popular-video) .column {
+  margin-block-end: 800px;
+} */
+
+/*---------------*\
+collection
+\*---------------*/
+
+.grid-card .label {color: var(--on-surface-variant);}
+
+.collection-grid .list-item {border-block-end: 1px solid var(--outline-variant);}
+
+.collection .btn {
+  margin-block: 12px;
+  margin-inline: auto;
 }
+
+
+/*---------------*\
+footer
+\*---------------*/
+
+.footer {
+  margin-block-start: 24px;
+  padding-block-end: 16px;
+}
+
+.footer-card { 
+  background-color: var(--surface-container);
+  color: var(--on-surface-variant);
+  padding: 16px;
+  border-radius: var(--radius-large);
+}
+
+.footer-card .text {
+  line-height: 18px;
+  margin-block: 8px 16px;
+}
+
+.footer-card :where(span, a) {display: inline-block;}
+
+.footer-card a:not(.logo):hover {text-decoration: underline;}
