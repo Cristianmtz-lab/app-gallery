@@ -3,6 +3,7 @@
 import { addEventOnElements } from "../utils/handleEvent.js";
 import { ripple } from "../utils/ripple.js";
 import { updateurl } from "../utils/updateUrl.js";
+import { urlDecode } from "../utils/urlDecode.js";
 import { segment } from "./segment_btn.js";
 
 // search view toggle in small devies
@@ -96,3 +97,8 @@ for (let i = 0; i < historyLen & i <= 5; i++) {
 
   $searchList.appendChild($listItem)
 }
+
+// show searched value in search after reload
+
+const search = urlDecode(window.location.search.slice(1));
+if (search.query) $searchField.value = search.query;

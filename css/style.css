@@ -462,7 +462,9 @@ reused style
   margin-block-end: 24px;
 }
 
-.container {padding-inline: 16px;}
+.container {
+  padding-inline: 16px; 
+}
 
 .section-title {margin-block-end: 12px;}
 
@@ -473,7 +475,7 @@ reused style
   grid-template-columns: repeat(var(--column-count), minmax(0, 1fr));
   gap: var(--column-gap);
 
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 .img-cover {
@@ -1039,7 +1041,8 @@ main
 
 .main article {
   margin-top: 64px;
-  height: 100dvh;
+  min-height: 100dvb;
+  height: 100%;
 }
 
 /*curated photos & popular video*/
@@ -1067,6 +1070,9 @@ footer
 \*---------------*/
 
 .footer {
+  position: relative;
+  left: 0;
+  bottom: 0;
   margin-block-start: 24px;
   padding-block-end: 16px;
 }
