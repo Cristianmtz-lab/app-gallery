@@ -5,11 +5,21 @@ import { gridInit, updateGrid } from "../../utils/masonry_grid.js";
 import { photoCard } from "../../js/photo_card.js";
 import { updateurl } from "../../utils/updateUrl.js";
 import { urlDecode } from "../../utils/urlDecode.js";
+import { filter } from "../../js/filter.js";
 
 // show filter bar if seaarch anything
-
 const $filterBar = document.querySelector("[data-filter-bar]");
 $filterBar.style.display = window.location.search ? "flex" : "none";
+
+// init filter 
+const $filterWrappers = document.querySelectorAll("[data-filter]");
+$filterWrappers.forEach($filterWrapper => {
+
+  filter($filterWrapper, window.filterObj, (newObj) => {
+    window.filterObj = newObj;
+    updateurl(newObj, "photos");
+  });
+});
 
 // render curated or searched photos
 

@@ -8,5 +8,5 @@ export const updateurl = (filterObj, searchType) => {
     const searchQuery = urlEncode(filterObj);
 
     window.location = `${root}/pages/${searchType}/${searchType}.html?${searchQuery}`;
-  }, 500)
+  }, 500);
 }
