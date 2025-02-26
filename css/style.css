@@ -280,7 +280,7 @@ body {
   flex-direction: column;
   min-height: 100dvb;
   transition: opacity var(--motion-duration-medium-2) var(--motion-easing-linear);
-  /* opacity: 0; */
+  opacity: 0;
 }
 
 button:disabled {
@@ -1167,6 +1167,7 @@ photo detail page
 .detail-wrapper {
   height: 588px;
   display: grid;
+  padding-block-start: 10px;
   grid-template-rows: 1fr max-content;
   place-items: center;
 }
