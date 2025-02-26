@@ -2,6 +2,7 @@
 
 import { client } from '../../js/api_configure.js';
 import { ripple } from '../../utils/ripple.js';
+import { photoCard } from '../../js/photo_card.js';
 import { gridInit, updateGrid } from '../../utils/masonry_grid.js';
 import { menu } from '../../js/menu.js';
 import { favorite } from '../../js/favorite.js';
@@ -82,6 +83,32 @@ client.photos.detail(photoId, data => {
     this.animate({
       opacity: 1
     }, { duration: 400, fill: "forwards" });
+
+    if (alt) {
+      client.photos.search({ query: alt, page: 1, per_page: 30 }, data => {
+        loadSimilar(data);
+      })
+    } else {
+      $loader.style.display = "none";
+      $photoGrid.innerHTML = `<p>No similar photo found.</p>`
+    }
+
   });
 
-})
+});
+
+// load similar photos
+
+const $photoGrid = document.querySelector("[data-photo-grid]");
+const photoGrid = gridInit($photoGrid);
+const $loader = document.querySelector("[data-loader]");
+
+const loadSimilar = function (data) {
+  data.photos.forEach(photo => {
+    const $card = photoCard(photo);
+
+    updateGrid($card, photoGrid.columnsHeight, photoGrid.$columns);
+    $loader.style.display = "none";
+
+  });
+}
