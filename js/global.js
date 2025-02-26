@@ -49,7 +49,7 @@ if (window.location.search.slice(1)) {
       if ($filterItem) $filterItem.querySelector("[data-filter-value]").innerText = filterValue;
     };
   });
-}
+};
 
 // initial favorite object in local storage
 
@@ -60,4 +60,14 @@ if (!window.localStorage.getItem("favorite")) {
   }
 
   window.localStorage.setItem("favorite", JSON.stringify(favoriteObj));
-}
+};
+
+// page transition
+
+window.addEventListener("loadstart", function () {
+  this.document.body.style.opacity = "0";
+});
+
+window.addEventListener("DOMContentLoaded", function () {
+  this.document.body.style.opacity = "1";
+});
