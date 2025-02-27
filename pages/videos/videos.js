@@ -65,13 +65,13 @@ renderVideos(currentPage);
 const $loader = document.querySelector("[data-loader]");
 let isLoaded = true;
 
-window.addEventListener("scroll", function () {
-
+const loadMore = function () {
   if ($loader.getBoundingClientRect().top < (window.innerHeight * 2) && currentPage <= totalPage && isLoaded) {
-
     currentPage++;
     renderVideos(currentPage);
     isLoaded = false;
-
+    if (currentPage >= totalPage) $loader.style.display = "none";
   }
-});
+}
+
+window.addEventListener("scroll", loadMore);
