@@ -1186,3 +1186,11 @@ photo detail page
 .detail-wrapper .color-primary {display: inline-block;}
 
 .detail .title-large {margin-block: 32px 16px;}
+
+/*---------------*\
+favorite page
+\*---------------*/
+
+.favorite-page .btn-group {margin-block: 16px;}
+
+.favorite-page .btn-group .btn-segment {flex: 1 1 25%;}
