@@ -10,6 +10,8 @@ import { favorite } from '../../js/favorite.js';
 // add ripple effect
 const $rippleElems = document.querySelectorAll("[data-ripple]");
 
+$rippleElems.forEach($rippleElem => ripple($rippleElem));
+
 // page transition
 window.addEventListener("loadstart", function () {
   this.document.body.style.opacity = "0";
