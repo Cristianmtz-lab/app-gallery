@@ -70,7 +70,7 @@ const loadMore = function () {
     currentPage++;
     renderVideos(currentPage);
     isLoaded = false;
-    if (currentPage >= totalPage) $loader.style.display = "none";
+
   }
 }
 

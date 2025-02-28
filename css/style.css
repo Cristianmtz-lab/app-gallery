@@ -1194,3 +1194,209 @@ favorite page
 .favorite-page .btn-group {margin-block: 16px;}
 
 .favorite-page .btn-group .btn-segment {flex: 1 1 25%;}
+
+/*---------------*\
+media query
+\*---------------*/
+
+/*responsive for larger than 900px screen*/
+
+@media (min-width: 900px) {
+  /*typography*/
+
+  .headline-medium {
+    font-size: var(--fs-headline-small);
+    font-weight: var(--weight-regular);
+    line-height: 44px;
+  }
+
+  .title-large {
+    font-size: var(--fs-headline-small);
+    font-weight: var(--weight-regular);
+    line-height: 32px;
+  }
+
+  /*Components*/
+
+  /*top app bar*/
+
+  .top-app-bar .logo {margin-inline-end: 0;}
+
+  .top-app-bar .search-open {display: none;}
+
+  /*search*/
+
+  .search-view {
+    all: unset;
+    align-self: flex-start;
+    margin-block-start: 8px;
+    margin-inline: auto;
+    max-width: 560px;
+    width: 100%;
+    background-color: var(--surface-container-high);
+    border-radius: var(--radius-extra-large);
+    overflow: hidden;
+  }
+
+  .search-view:focus-within {box-shadow: var(--elevetian-2);}
+
+  .search-bar {height: 48px;}
+
+  .search-view:not(:focus-within) .search-bar {
+    border: none;
+    --state-layer-bg: var(--on-surface);
+  }
+
+  .search-bar .icon-btn:first-child, 
+  .search-view:not(:focus-within) :where(.icon-btn, .search-view-content) {
+    display: none;
+  }
+
+  .input-wrapper .leading-icon {display: block;}
+
+  .search-view:focus-within :where(.leading-icon) {
+    display: none;
+  }
+
+  .search-bar .input-wrapper {
+    display: flex;
+    align-items: center;
+    gap:  16px;
+    padding-inline-start: 16px;
+  }
+
+  /*card*/
+
+  .card .card-content {
+    opacity: 0;
+    transition: opacity var(--motion-duration-short-2) var(--motion-easing-linear);
+  }
+
+  .card:where(:hover, :focus-visible) .card-content {
+    opacity: 1;
+  }
+
+  /*reused style*/
+
+  .container {padding-inline: 24px;}
+
+  .section  {margin-block-end: 36px;}
+
+  .section-title {margin-block-end: 20px;}
+
+  .media-grid {
+    --column-count: 3;
+    --column-gap: 12px;
+  }
+
+  .collection-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 24px;
+  }
+
+  /*collections*/
+
+  .collection .btn {margin-block: 24px;}
+
+  /*footer*/
+
+  .footer-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: flex-end;
+  }
+
+  .footer-card .text {margin-block-end: 4px;}
+}
+
+/*responsive for larger than 1240px screen*/
+
+@media (min-width: 1240px) {
+  /*typography*/
+
+  .headline-medium {
+    font-size: var(--fs-display-medium);
+    font-weight: var(--weight-regular);
+    line-height: 54px;
+  }
+
+  .title-large {
+    font-size: var(--fs-headline-medium);
+    font-weight: var(--weight-regular);
+    line-height: 36px;
+  }
+
+  /*reused style*/
+
+  .scrim {display: none;}
+
+  /*components*/
+
+  /*top app bar*/
+
+  .top-app-bar {
+    left: 360px;
+    width: auto;
+    right: 0;
+  }
+
+  .top-app-bar,
+  .top-app-bar.active {
+    background-color: var(--background);
+  }
+
+  .top-app-bar :where(.icon-btn:first-child, .logo) {display: none;}
+
+  /*search*/
+
+  .search-view {max-width: 720px;}
+
+  /*navigation*/
+
+  .navigation {
+    --navigation-drawer-width: 360px;
+    visibility: visible;
+    width: var(--navigation-drawer-width);
+    border-radius: 0;
+  }
+
+  .navigation :where(.navigation-header, .drawer-list) {opacity: 1;}
+
+  .navigation-header {
+    height: 64px;
+    padding-inline: 28px;
+  }
+
+  .navigation-header .icon-btn {display: none;}
+
+  /*reused style */
+
+  .main,
+  .footer {margin-inline-start: 360px;}
+
+  .container {
+    max-width: 1128px;
+    width: 100%;
+    margin-inline: auto;
+  }
+
+  .media-grid {--column-gap: 16px;}
+
+  .collection-grid  {grid-template-columns:   repeat(3, 1fr);}
+
+  .section-title {margin-block-end: 24px;}
+
+  /*photo detail*/
+
+  .detail-wrapper {height: 788px;}
+
+  .detail-banner {max-height: 760px;}
+
+  .detail .title-large {margin-block-start: 40px;}
+}
+
+/*responsive for larger than 1400px screen*/
+
+@media (min-width: 1400px)
